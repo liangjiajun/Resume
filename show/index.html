@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>作品展示页面</title>
+	<style>
+		*{padding: 0;margin: 0;box-sizing: border-box;list-style: none;text-decoration: none;font-weight: normal;}
+		body{background:linear-gradient(#a8edea, #fed6e3);height: 100vh;}
+		h1,h2{color: #5f5f5f;}
+		header{line-height: 80px;box-shadow: 0 1px 5px #94d6d3;text-align: center;background: #fff;}
+		section{padding: 20px;}
+		.flex{display: -webkit-flex; display: -moz-flex; display: -ms-flex; display: -o-flex; display: flex;}
+		a{color: #666}
+		#wrap{width: 75%;margin: 5% auto 0;box-shadow: 0 0px 50px rgba(0, 0, 0, 0.3);}
+		#wrap li{flex:1;transition: all .5s ease-out;position: relative;background: #fff;}
+		#wrap li:hover{box-shadow: 0 10px 60px rgba(7,115,189,.5);z-index: 999;transform: translate3d(0,-5px,0);}
+		.active{box-shadow: 0 10px 60px rgba(7,115,189,.5);z-index: 999;transform: translate3d(0,-5px,0);}
+		.item-img{display: block;overflow: hidden;position: relative;box-shadow: 0 0 5px #f0f inset;}
+		.item-img img{position: absolute;}
+		.item-img,.text{height: 320px;text-align: center;}
+		.text{font-size: 2rem;line-height:20rem;overflow: hidden;text-overflow:clip;white-space: nowrap; }
+		.t1:after{content: "Student management platform";display: block;font-size: 1rem;margin-top: -17rem;color: #86dff3;}
+		.t2:after{content: "New Student management platform";display: block;font-size: 1rem;margin-top: -17rem;color: #86dff3;}
+		.t3:after{content: "Guanddong academic results show";display: block;font-size: 1rem;margin-top: -17rem;color: #86dff3;}
+		.t4:after{content: "Gzittc little partner";display: block;font-size: 1rem;margin-top: -17rem;color: #86dff3;}
+		.icon{width: 45px;height: 45px;display: block;background: #fff;position: absolute;bottom:calc(50% - 25px);;left:calc(50% - 25px);border-radius: 50%;box-shadow: 0 0 10px rgba(0,0,0,.2);}
+		.icon:after{content: ">"; font-family: "SimHei"; font-size: 2rem; text-align: center; display: block; line-height: 40px; transform: rotate(-90deg); color: #949494; }
+		.i2:after{transform: rotate(90deg);line-height: 45px;}
+		.manage{top: 0;left: -40%;width: 200%;}
+		.manage2{top: 0;left: 0%;width: 160%;height: 100%;}
+		.guangdong{top: 0;left: -20%;width: 150%;height: 100%;}
+		.gmf{width: 100%;height: 150%;top: -15%;left: 0;}
+		.itemList{position: fixed;top: 0;left: 0;width: 100%;height: 100%;background: rgba(255,255,255,.9);z-index: 999;overflow-y: scroll;}
+		.itemList h2{padding: 20px 0;}
+		.itemList ul{width: 70%;margin: 0 auto;}
+		.itemList .list-work li,.manage1 li,.newManage li{width: 100%;background: #fff;font-size: 24px;text-align: center;padding-bottom: 15px;box-shadow: 0 0px 20px rgba(0, 0, 0, 0.3);margin-bottom: 15px;}
+		.itemList .list-work li img,.manage1 li img,.newManage li img{max-width: 100%}
+		.flr{cursor: pointer;position: fixed;top: 3%;right: 3%;}
+		.hide,[name="hide"]{display: none;}
+		.iphone{float: left;background: #fff;width: 350px;padding: 20px 0;border-radius: 10px;box-shadow: 0 0 10px rgba(0,0,0,.4) inset;text-align: center;font-size: 18px;	color: #666;}
+		.iphone iframe{margin: 0 auto;display: block;width: 320px;height: 560px;}
+		.gmf1 .iphone-view{float: left;width: 70%;margin-left: 10%;}
+		.gmf1 .iphone-view li{width: 20%;padding-bottom: 10px;font-size: 18px;float: left;margin-right: 10px;}
+	</style>
+</head>
+<body>
+	<header>
+		<h1>个人作品展示</h1>
+	</header>
+	<section>
+		<ul class="flex" id="wrap">
+			<li class="active" data-list="manage1">
+				<a href="javascript:void(0)">
+					<span class="item-img">
+						<img class="manage" src="star/home.png" alt="home">
+					</span>
+					<p class="text t1">
+						学生管理平台
+					</p>
+					<span class="icon"></span>
+				</a>
+			</li>
+			<li data-list="newManage">
+				<a href="javascript:void(0)">
+					<p class="text t2">新版学生管理平台</p>
+					<span class="item-img">
+						<img class="manage2" src="star2/home.png" alt="star2">
+					</span>
+					<span class="icon i2"></span>
+				</a>
+			</li>
+			<li data-list="guangdong">
+				<a href="http://gzittc.net/Guangdong/">
+					<span class="item-img">
+						<img class="guangdong" src="images/guangdong.png" alt="广东学业成果展示">
+					</span>
+					<p class="text  t3">广东省学业成果展示</p>
+					<span class="icon"></span>
+				</a>
+			</li>
+			<li data-list="gmf1">
+				<a href="javascript:void(0)">
+					<p class="text t4">工贸小伙伴</p>
+					<span class="item-img">
+						<img class="gmf" src="gmf/start.png" alt="gmf">
+					</span>
+					<span class="icon i2"></span>
+				</a>
+			</li>
+		</ul>
+	</section>
+	<section class="itemList hide" id="item">
+		<ul class="manage1" name="hide">
+		<h2>学生管理平台 <span class="flr">关闭</span></h2>
+			<li>
+				<span>
+					<img class="manage" src="star/login.png" alt="login">
+				</span>
+				登录页面
+			</li><li>
+				<span>
+					<img class="manage" src="star/home.png" alt="home">
+				</span>
+				首页
+			</li>
+			<li>
+				<span>
+					<img class="manage2" src="star/work.png" alt="work">
+				</span>
+				任务发布页
+			</li>
+			<li>
+				<span>
+					<img class="manage2" src="star/content.png" alt="content">
+				</span>
+				任务详细页
+			</li>
+			<li>
+				<span>
+					<img class="manage2" src="star/answers1.png" alt="answers1">
+				</span>
+				在线答题页
+			</li>
+		</ul>
+		<ul class="newManage" name="hide">
+		<h2>新版学生管理平台 <span class="flr">关闭</span></h2>
+            <li><a href="../starV1">项目链接</a></li>
+			<li>
+				<span>
+					<img class="manage2" src="star2/login.png" alt="login">
+				</span>
+				登录页面
+			</li>
+			<li>
+				<span>
+					<img class="manage" src="star2/home.png" alt="home">
+				</span>
+				首页
+			</li>
+			<li>
+				<span>
+					<img class="manage2" src="star2/add.png" alt="add">
+				</span>
+				添加项目
+			</li>
+			<li>
+				<span>
+					<img class="manage2" src="star2/user-list.png" alt="user-list">
+				</span>
+				成员项目页面
+			</li>
+			<li>
+                <span>
+                    <img class="manage2" src="star2/sign.png" alt="sign">
+                </span>
+                成员考勤页面
+            </li>
+            <li>
+				<span>
+					<img class="manage2" src="star2/data.png" alt="data">
+				</span>
+				数据统计页面
+			</li>
+			<li>
+                <span>
+                    <img class="manage2" src="star2/user.png" alt="user">
+                </span>
+                成员信息页面
+            </li>
+            <li>
+				<span>
+					<img class="manage2" src="star2/user-face.png" alt="user-face">
+				</span>
+				成员头像修改页面
+			</li>
+			<li>
+				<span>
+					<img class="manage2" src="star2/manage.png" alt="manage">
+				</span>
+				项目管理页面
+			</li>
+		</ul>
+		<div class="gmf1" name="hide">
+			<h2>工贸小伙伴 <span class="flr">关闭</span></h2>
+			<div class="iphone">
+				<iframe src="http://gmf.gzittc.net/weixin/" frameborder="0" ></iframe>
+				手机演示（可操作）
+			</div>
+			<ul class="iphone-view list-work">
+				<li>
+					<span>
+						<img class="gmf" src="gmf/start.png" alt="start">
+					</span>
+					起始页面
+				</li>
+				<li>
+					<span>
+						<img class="gmf" src="gmf/login.png" alt="login">
+					</span>
+					登录页面
+				</li>
+				<li>
+					<span>
+						<img class="gmf" src="gmf/user.png" alt="user">
+					</span>
+					用户选择
+				</li>
+				<li>
+					<span>
+						<img class="gmf" src="gmf/home.png" alt="home">
+					</span>
+					首页
+				</li>
+				<li>
+					<span>
+						<img class="gmf" src="gmf/send.png" alt="send">
+					</span>
+					信息推送
+				</li>
+				<li>
+					<span>
+						<img class="gmf" src="gmf/data.png" alt="data">
+					</span>
+					违纪统计页
+				</li>
+				<li>
+					<span>
+						<img class="gmf" src="gmf/search-page.png" alt="search-page">
+					</span>
+					搜索页面
+				</li>
+				<li>
+					<span>
+						<img class="gmf" src="gmf/search.png" alt="search">
+					</span>
+					搜索结果页
+				</li>
+			</ul>
+		</div>
+	</section>
+</body>
+</html>
+<script>
+var list = document.querySelectorAll('li'),
+	Dclose = document.querySelectorAll('.flr'),
+	manage1 = document.querySelectorAll('.manage1')[0],
+	newManage = document.querySelectorAll('.newManage')[0],
+	gmf1 = document.querySelectorAll('.gmf1')[0],
+	itemList = document.getElementById('item');
+for(var i=0;i<list.length;i++){
+	list[i].onclick = function() {
+		var dataType = this.dataset.list;
+		if(dataType){
+			var typeDom = document.querySelectorAll('.'+dataType)[0];
+			itemList.setAttribute('class','itemList');
+			typeDom.setAttribute('name',' ');
+		}
+	}
+	list[i].onmouseover = function() {
+		list[0].setAttribute('class',' ');
+	}
+
+}
+
+itemList.addEventListener('click',function(e){
+	switch(e.target.className){
+		case 'flr' :
+			itemList.scrollTop=0;
+			itemList.setAttribute('class','itemList hide');
+			manage1.setAttribute('name','hide');
+			newManage.setAttribute('name','hide');
+			gmf1.setAttribute('name','hide');
+
+		break;
+		case 'itemList' :
+			itemList.scrollTop=0;
+			itemList.setAttribute('class','itemList hide');
+			manage1.setAttribute('name','hide');
+			newManage.setAttribute('name','hide');
+			gmf1.setAttribute('name','hide');
+		break;
+	}
+},false)
+
+
+
+
+</script>
