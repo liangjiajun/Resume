@@ -38,7 +38,7 @@
 1. 熟悉 JavaScript，面向对象编程，熟练应用 JQuery、ajax
 1. 熟悉 PHP 以及 Mysql，可以进行小型的后台开发
 1. 熟练使用 PS，可以快速重制网页元素，具有一定的设计审美能力
-1. 了解 Vue.js,可以开发简单的页面应用
+1. 了解 Vue.js、HTTP协议、Webpack、Gulp
 1. 具有一定打包 Hybrid App 的经验
 1. 了解常见浏览器的兼容问题，能够书写兼容性代码
 1. 可以配置基本的 git 服务器
